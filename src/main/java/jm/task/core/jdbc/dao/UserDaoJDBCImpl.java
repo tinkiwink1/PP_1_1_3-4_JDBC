@@ -40,6 +40,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Connection connection = util.getConnection()) {
             statement = connection.createStatement();
             statement.executeUpdate(dropTable);
+            statement.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
